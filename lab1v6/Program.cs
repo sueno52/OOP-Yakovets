@@ -9,9 +9,9 @@ public class Program
 
         Console.WriteLine(" Лабораторна робота №1 | Варіант 6: BankAccount \n");
 
-        BankAccount acc1 = new BankAccount("Іван Петренко", "UA1234567890", 1500.50m);
-        BankAccount acc2 = new BankAccount("Марія Коваль", "UA0987654321", 500.00m);
-        BankAccount acc3 = new BankAccount("Олексій Сидоренко", "UA1122334455", 0.00m);
+        BankAccount acc1 = new BankAccount("Наталія Сидорчук", "UA1234567890", 1500.50m);
+        BankAccount acc2 = new BankAccount("Олександр Еклер", "UA0987654321", 500.00m);
+        BankAccount acc3 = new BankAccount("Денис Гармаш", "UA1122334455", 0.00m);
 
         acc1.PrintAccountInfo();
         acc2.PrintAccountInfo();
