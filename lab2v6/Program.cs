@@ -76,8 +76,8 @@ class Program
     {
         Console.WriteLine("Creating objects");
 
-        BankAccount acc1 = new BankAccount("Олександр Петренко", "UA1234567890", 1500.50m);
-        BankAccount acc2 = new BankAccount("Іван Іваненко", "UA0987654321");
+        BankAccount acc1 = new BankAccount("Олександр Еклер", "UA1234567890", 1500.50m);
+        BankAccount acc2 = new BankAccount("Денис Гармаш", "UA0987654321");
 
         Console.WriteLine("\nWorking with objects");
         acc1.Deposit(500m);
