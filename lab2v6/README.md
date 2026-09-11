@@ -32,4 +32,4 @@
 ---
 
 ##  Результат виконання програми
-![alt text](image.png)
+<img width="1529" height="200" alt="image" src="https://github.com/user-attachments/assets/3ab79cf3-4373-4eb6-9726-81265b3d815e" />
