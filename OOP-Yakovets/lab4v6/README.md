@@ -24,4 +24,4 @@
 
 
 ## Фотозвіт
-
+<img width="1094" height="189" alt="image" src="https://github.com/user-attachments/assets/0edf0765-b28e-4e49-b8ca-41ca68beadd7" />
