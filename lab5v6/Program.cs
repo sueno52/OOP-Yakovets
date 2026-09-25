@@ -78,7 +78,7 @@ namespace Lab5_Polymorphism
                 new Salad("Грецький", "Оливкова олія, сир Фета")
             };
 
-            Console.WriteLine("Поліморфізм(готування страв)");
+            Console.WriteLine("Демонстрація поліморфізму(приготувкання страв)");
             
             List<string> preparedDishes = new List<string>();
 
