@@ -10,15 +10,15 @@
 
 ## Хід роботи
 
-1. **Створено консольний проєкт:** `dotnet new console -o OOP-Yakovets/lab12v6`
-2. **Створено проєкт для тестів:** `dotnet new xunit -o OOP-Yakovets/lab12v6.Tests` та додано посилання на основний проєкт: `dotnet add reference ../lab12v6/lab12v6.csproj`
+1. **Створено консольний проєкт:** `dotnet new console -o OOP-Yakovets/lab7v6`
+2. **Створено проєкт для тестів:** `dotnet new xunit -o OOP-Yakovets/lab7v6.Tests` та додано посилання на основний проєкт: `dotnet add reference ../lab7v6/lab7v6.csproj`
 3. **Інтерфейси та реалізація:**
    * **`IEntity` (інтерфейс):** містить властивість `int Id { get; set; }`.
    * **`IRepository<T>` (узагальнений інтерфейс):** оголошує методи `GetById(int id)`, `GetAll()`, `Add(T item)`, `Update(T item)`, `Delete(int id)` з обмеженням `where T : IEntity`.
    * **`InMemoryRepository<T>` (реалізація):** зберігає дані у `List<T>` і реалізує всі CRUD-операції. Для неіснуючого `Id` методи `GetById`, `Update` та `Delete` кидають `KeyNotFoundException`, а `Add` з наявним `Id` — `ArgumentException`.
 4. **Сутність за варіантом:**
    * **`Employee` (клас сутності):** реалізує `IEntity` і містить властивості `FirstName`, `LastName`, `Position`.
-5. **Юніт-тести (`lab12v6.Tests`):**
+5. **Юніт-тести (`lab7v6.Tests`):**
    * Написано 11 тестів для методів `Add`, `GetById`, `GetAll`, `Update` та `Delete`, включно з перевіркою неіснуючих елементів.
    * Для перевірки використано `Assert.Equal`, `Assert.Single`, `Assert.Empty`, `Assert.Contains` та `Assert.Throws`.
 6. **Демонстрація в `Main`:**
@@ -26,9 +26,8 @@
 
 ## Фотозвіт
 
-![Результат dotnet test]![alt text](image.png)
-
-![Консольний вивід програми]![alt text](image-1.png)
+![Результат dotnet test]!<img width="666" height="242" alt="image" src="https://github.com/user-attachments/assets/279a73ca-73c0-4871-8798-63df485d3590" />
+![Консольний вивід програми]!<img width="634" height="289" alt="image" src="https://github.com/user-attachments/assets/7e8307d5-2a39-4219-8463-67a7adbc8ffd" />
 
 **Висновок:** узагальнений репозиторій працює з будь-яким типом, що реалізує `IEntity`, а всі CRUD-операції підтверджено юніт-тестами.
 
