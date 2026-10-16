@@ -26,8 +26,8 @@
 
 ## Фотозвіт
 
-![Результат dotnet test]!<img width="666" height="242" alt="image" src="https://github.com/user-attachments/assets/279a73ca-73c0-4871-8798-63df485d3590" />
-![Консольний вивід програми]!<img width="634" height="289" alt="image" src="https://github.com/user-attachments/assets/7e8307d5-2a39-4219-8463-67a7adbc8ffd" />
+*Тести <img width="666" height="242" alt="image" src="https://github.com/user-attachments/assets/279a73ca-73c0-4871-8798-63df485d3590" />
+*Консоль <img width="634" height="289" alt="image" src="https://github.com/user-attachments/assets/7e8307d5-2a39-4219-8463-67a7adbc8ffd" />
 
 **Висновок:** узагальнений репозиторій працює з будь-яким типом, що реалізує `IEntity`, а всі CRUD-операції підтверджено юніт-тестами.
 
