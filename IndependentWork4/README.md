@@ -23,12 +23,12 @@
    * Створено об'єкти `Book`, `Journal`, `AudioBook` і викликано `DisplayDetails()` окремо та через `List<LibraryItem>`.
 
 ## Ієрархія
-
+```
 LibraryItem
 ├── Book
 │   └── AudioBook
 └── Journal
-
+```
 ## Фотозвіт
 ![alt text](image.png)
 ## Звіт про наслідки зміни базового класу
