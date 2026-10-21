@@ -24,9 +24,11 @@
 
 
 ## Фотозвіт Тест
-![alt text](image-2.png)
+<img width="938" height="148" alt="tests" src="https://github.com/user-attachments/assets/afe9319d-e7fa-4772-ae05-fe093d0d5034" />
+
 ## Фотозвіт консольного виводу програми
-![alt text](image-3.png)
+<img width="608" height="279" alt="output" src="https://github.com/user-attachments/assets/930df049-3ca5-467d-96a3-42f5e7adccec" />
+
 
 ---
 
