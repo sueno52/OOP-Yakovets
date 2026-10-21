@@ -1,15 +1,18 @@
 namespace IndependentWork1;
+
 public class PhoneTariff
 {
+
     private string _name;
     private double _monthlyPrice;
     private int _internetGb;
- 
+
     public string Name
     {
         get { return _name; }
         set { _name = value; }
     }
+
     public double MonthlyPrice
     {
         get { return _monthlyPrice; }
