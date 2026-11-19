@@ -21,6 +21,14 @@
 ## Результат
 Повний звіт із посиланнями, аналізом, рефакторингом і висновками — у [`REPORT.md`](REPORT.md).
 
+Скріншоти проаналізованих фрагментів коду (з номерами рядків і комітом) лежать у папці [`screenshots`](screenshots) і вставлені у звіт біля кожного прикладу:
+
+| Принцип | ShareX | Humanizer |
+| --- | --- | --- |
+| SRP дотримано | ![Imgur](screenshots/01-srp-good-sharex-imgur.png) | ![ToSentenceCase](screenshots/02-srp-good-humanizer-tosentencecase.png) |
+| SRP порушено | ![TaskHelpers](screenshots/03-srp-bad-sharex-taskhelpers-switch.png) | ![ByteSize](screenshots/05-srp-bad-humanizer-bytesize.png) |
+| OCP | ![UploaderFactory](screenshots/06-ocp-sharex-uploaderfactory.png) | ![To.Transform](screenshots/07-ocp-humanizer-to-transform.png) |
+
 
 ## Контрольні запитання
 

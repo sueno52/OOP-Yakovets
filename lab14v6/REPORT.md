@@ -16,6 +16,9 @@
 
 **Код:** [`Imgur.cs` L46–L78](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX.UploadersLib/ImageUploaders/Imgur.cs#L46-L78) (`ImgurImageUploaderService`) і [`Imgur.cs` L80–L416](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX.UploadersLib/ImageUploaders/Imgur.cs#L80-L416) (`Imgur`)
 
+![Скріншот: ImgurImageUploaderService (ShareX)](screenshots/01-srp-good-sharex-imgur.png)
+
+
 ```csharp
 public class ImgurImageUploaderService : ImageUploaderService
 {
@@ -39,6 +42,9 @@ public class ImgurImageUploaderService : ImageUploaderService
 ### 1.2. Humanizer — одна трансформація = один клас
 
 **Код:** [`ToSentenceCase.cs` L1–L23](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Transformer/ToSentenceCase.cs#L1-L23)
+
+![Скріншот: ToSentenceCase (Humanizer)](screenshots/02-srp-good-humanizer-tosentencecase.png)
+
 
 ```csharp
 class ToSentenceCase : ICulturedStringTransformer
@@ -67,6 +73,11 @@ class ToSentenceCase : ICulturedStringTransformer
 ### 2.1. ShareX — `TaskHelpers`: статичний клас на ~3000 рядків (найгірший приклад)
 
 **Код:** [`TaskHelpers.cs` L66](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX/TaskHelpers.cs#L66) (оголошення класу), [`ExecuteJob` L78–L426](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX/TaskHelpers.cs#L78-L426)
+
+![Скріншот: switch у TaskHelpers.ExecuteJob (ShareX)](screenshots/03-srp-bad-sharex-taskhelpers-switch.png)
+
+![Скріншот: методи TaskHelpers (ShareX)](screenshots/04-srp-bad-sharex-taskhelpers-methods.png)
+
 
 ```csharp
 public static class TaskHelpers
@@ -105,6 +116,9 @@ public static class TaskHelpers
 * [оператори L1281–L1293](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Bytes/ByteSize.cs#L1281-L1293);
 * [парсинг L1314–L1840](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Bytes/ByteSize.cs#L1314-L1840).
 
+![Скріншот: методи ByteSize (Humanizer)](screenshots/05-srp-bad-humanizer-bytesize.png)
+
+
 * **Де видно порушення:** одна структура зберігає значення, переводить одиниці, рахує (`+`, `-`), форматує в рядок і понад 500 рядків розбирає текст (`Parse`, `TryParse`, `ParseWithUnitSystem`).
 * **Пом'якшення:** для value-типу частина цього природна (оператори, `ToString`), тож порушення помірне, на відміну від `TaskHelpers`.
 * **Ризики:** зміна правил парсингу (нова одиниця, новий формат) вимагає правити великий файл, де лежить і арифметика; легко випадково зачепити інше.
@@ -117,6 +131,9 @@ public static class TaskHelpers
 ### 3.1. ShareX — нові сервіси завантаження через спадкування й рефлексію
 
 **Код:** [`UploaderService.cs` L31–L46](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX.UploadersLib/BaseServices/UploaderService.cs#L31-L46), [`ImageUploaderService.cs` L28–L31](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX.UploadersLib/BaseServices/ImageUploaderService.cs#L28-L31), [`UploaderFactory.cs` L42–L50](https://github.com/ShareX/ShareX/blob/c050ffd26a72b7969b95cedefe69f71352a89e67/ShareX.UploadersLib/UploaderFactory.cs#L42-L50)
+
+![Скріншот: UploaderFactory (ShareX)](screenshots/06-ocp-sharex-uploaderfactory.png)
+
 
 ```csharp
 public abstract class ImageUploaderService : UploaderService<ImageDestination>, IGenericUploaderService
@@ -140,6 +157,11 @@ private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderServi
 ### 3.2. Humanizer — власні трансформації й мови без зміни бібліотеки
 
 **Код:** [`IStringTransformer.cs`](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Transformer/IStringTransformer.cs#L6-L13), [`To.cs` L11–L12](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Transformer/To.cs#L11-L12), [`LocaliserRegistry.cs` L52–L77](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Configuration/LocaliserRegistry.cs#L52-L77), [`Configurator.cs` L16 і L107](https://github.com/Humanizr/Humanizer/blob/4574b93883bf48e3f0f3bca73297054537317ab2/src/Humanizer/Configuration/Configurator.cs#L16)
+
+![Скріншот: To.Transform (Humanizer)](screenshots/07-ocp-humanizer-to-transform.png)
+
+![Скріншот: LocaliserRegistry (Humanizer)](screenshots/08-ocp-humanizer-localiserregistry.png)
+
 
 ```csharp
 public interface IStringTransformer
@@ -199,6 +221,7 @@ public class HotkeyActionRegistry
             ? action.ExecuteAsync(settings, filePath)
             : Task.CompletedTask;
 }
+```
 
 **Що це дає:**
 * нова дія = новий клас, а `ExecuteJob` більше не змінюється (OCP);
@@ -211,7 +234,7 @@ ShareX уже використовує такий підхід для заван
 ## 5. Висновки
 
 1. Обидва проєкти дотримуються SRP і OCP там, де очікують розширення: сервіси завантаження в ShareX, трансформації й мови в Humanizer.
-2. OCP найкраще видно не в самих інтерфейсах, а в точках розширення: рефлексія в `UploaderFactory`, `Register(...)` у `LocaliserRegistry`, `params IStringTransformer[]`.s
+2. OCP найкраще видно не в самих інтерфейсах, а в точках розширення: рефлексія в `UploaderFactory`, `Register(...)` у `LocaliserRegistry`, `params IStringTransformer[]`.
 3. OCP у ShareX дотримано частково: новий сервіс усе одно вимагає правити enum і великий `UploadersConfig`.
 4. Великий файл ще не означає порушення SRP. `ByteSize` великий, але це один value-тип, тож порушення помірне. `TaskHelpers` порушує SRP по-справжньому, бо змішує непов'язані завдання.
 5. Головна ознака порушення SRP — кілька різних причин змінювати клас (UI, файли, запис екрана), а не кількість рядків.
